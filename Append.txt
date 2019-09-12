@@ -1,0 +1,26 @@
+Module Module1
+    Structure person 'Structure declaration
+        Dim SId As Integer
+        Dim SName As String
+        Dim Dob As Date
+    End Structure
+
+    Sub Main()
+        'open file in write mode
+        Dim fp As IO.StreamWriter
+        fp = IO.File.AppendText("D:/VB.Net/cie")
+        Dim per As person
+        'Input part
+        Console.WriteLine("Enter student id")
+        per.SId = Console.ReadLine
+        Console.WriteLine("Enter student name")
+        per.SName = Console.ReadLine
+        Console.WriteLine("Enter student date of birth")
+        per.Dob = Console.ReadLine
+        'Write Record
+        fp.WriteLine(per.SId & " " & per.SName & " " & per.Dob)
+        'save and close
+        fp.Close()
+    End Sub
+
+End Module
